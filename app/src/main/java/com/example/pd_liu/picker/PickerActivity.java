@@ -19,15 +19,13 @@ public class PickerActivity extends AppCompatActivity {
     }
 
     public void datePicker(View view) {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                    Toast.makeText(PickerActivity.this, "i == " + i + ",,i1 == " + i1 + ",,i2" + i2, Toast.LENGTH_SHORT).show();
-                }
-            }, 2017, 7, 3);
-            dialog.show();
-        }
+        DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                Toast.makeText(PickerActivity.this, "i == " + i + ",,i1 == " + i1 + ",,i2== " + i2, Toast.LENGTH_SHORT).show();
+            }
+        }, 2017, 7, 3);
+        dialog.show();
     }
 
     public void timePicker(View view) {
@@ -40,7 +38,7 @@ public class PickerActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void elseInform(View view){
+    public void elseInform(View view) {
         startActivity(new Intent(this, FullscreenActivity.class));
     }
 }
